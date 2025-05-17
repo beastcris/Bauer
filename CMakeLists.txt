@@ -15,6 +15,9 @@ project (Bauer)
 find_package(Boost REQUIRED COMPONENTS asio)
 
 add_executable(${PROJECT_NAME} main.cpp)
+target_link_libraries(${PROJECT_NAME} Boost::asio)
+
+add_executable(test test/test.cpp)
 
 add_library(ThreadPool  threadPool.hpp)
 target_link_libraries(ThreadPool Boost::asio)
